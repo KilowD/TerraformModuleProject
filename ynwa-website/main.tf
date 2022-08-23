@@ -32,6 +32,10 @@ module "nat-gteway" {
    private_app_subnet_az2-id  = module.vpc.private_app_subnet_az2-id
    private_data_subnet_az2-id = module.vpc.private_data_subnet_az2-id
 
+}
 
-
+# create security group by referencing the output values from vpc module
+module "security-group" {
+source                      = "../modules/security-group"
+vpc-id                      = module.vpc.vpc-id 
 }

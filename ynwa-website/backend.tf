@@ -28,7 +28,7 @@ resource "aws_dynamodb_table" "terraform_DynamoDb-Example" {
  
 # setup the backend - first run the terraform apply without the below configure..comment it out first,
 # then run another init  to migrate from local to  S3 the backend
-/* terraform {
+terraform {
   backend "s3" {
     bucket              = "mys3-bucket-terraform-state"
     key                 = "global/ynwa-website.tfstate"  //path  i want to use for my state file
@@ -38,4 +38,4 @@ resource "aws_dynamodb_table" "terraform_DynamoDb-Example" {
     profile             = "terraform-user"
 
   }
-}    */
+}    
